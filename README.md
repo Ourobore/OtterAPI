@@ -1,16 +1,16 @@
 # OtterAPI
-A small API to learn Python Django.
+A small API to learn [Python Django](https://www.djangoproject.com).
 <br/>
 <br/>
 
 ## How to run the app
-First, create a Python virtual environment and activate it:
+First, create a [Python virtual environment](https://docs.python.org/3/library/venv.html) and activate it:
 ``` bash
 $ python3 -m venv .env
 $ source .env/bin/activate
 ```
 
-Then, install the app requirements int the virtual environment with `pip`:
+Then, install the app requirements int the virtual environment with [`pip`](https://pypi.org/project/pip):
 ``` bash
 $ pip3 install -r requirements.txt
 ```
