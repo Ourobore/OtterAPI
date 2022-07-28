@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Otter(models.Model):
     def __str__(self):
-        return self.name
+        return str(f"{self.name} ({self.sex}): {self.age} years old.")
 
     class Sex(models.TextChoices):
         MALE = "M", "Male"

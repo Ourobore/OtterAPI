@@ -1,0 +1,12 @@
+{% if otters %}
+<ul>
+    {% for otter in otters %}
+    <li>
+        <p>{{otter}}</p>
+        <!-- <a href="/all"></a> -->
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>The is no otter</p>
+{% endif %}
