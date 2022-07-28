@@ -1,6 +1,6 @@
 from django.shortcuts import get_list_or_404, render
-from django.http import Http404, HttpResponse
-from django.template import loader
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 from .models import Otter
 
@@ -44,4 +44,6 @@ def create_otter(request):
         )
         otter.save()
 
-    return HttpResponse("Nothing to see")
+    return HttpResponseRedirect(
+        reverse("otters:get_by_name", kwargs={"name": otter.name})
+    )
