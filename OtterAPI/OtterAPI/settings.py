@@ -28,12 +28,13 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "rest_framework",
     "API.apps.ApiConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -71,8 +72,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "OtterAPI.wsgi.application"
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ]
+}
 
+WSGI_APPLICATION = "OtterAPI.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
